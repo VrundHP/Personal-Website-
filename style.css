@@ -46,27 +46,6 @@
 }
 
 
-.cursor-particle {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: rgba(233, 0, 0, 0.8);
-    border-radius: 50%;
-    pointer-events: none; /* Ensures particles don’t block cursor events */
-    animation: particle-fade 1.5s ease-out forwards; /* Fade out and scale effect */
-    z-index: 10; /* Ensures particles appear above the background */
-}
-
-@keyframes particle-fade {
-    0% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(2);
-    }
-}
 
 
 
