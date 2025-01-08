@@ -1,5 +1,4 @@
 
-
 document.addEventListener("DOMContentLoaded", function () {
     const typingText = document.querySelector(".typing-text span");
     const words = [
@@ -14,6 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
         "Database Management",
         "Programming Languages",
     ];
+
+    // Determine the longest word for dynamic width
+    const longestWord = words.reduce((a, b) => (a.length > b.length ? a : b), "");
+    const container = document.querySelector(".typing-text");
+    container.style.width = `${longestWord.length}ch`; // Set the width based on the longest word
+
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -21,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
     function typeEffect() {
         const currentWord = words[wordIndex];
         if (isDeleting) {
-            // Remove characters
             typingText.textContent = currentWord.substring(0, charIndex--);
             if (charIndex < 0) {
                 isDeleting = false;
@@ -30,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
         } else {
-            // Add characters
             typingText.textContent = currentWord.substring(0, charIndex++);
             if (charIndex > currentWord.length) {
                 isDeleting = true;
@@ -38,11 +41,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
         }
-        setTimeout(typeEffect, isDeleting ? 50 : 100); // Speed of typing/deleting
+        setTimeout(typeEffect, isDeleting ? 50 : 100);
     }
 
     typeEffect();
 });
+
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -296,9 +301,9 @@ homePage.addEventListener("mousemove", (e) => {
 });
 
 
-
-
-
-
+function scrollToHome() {
+    const homeSection = document.querySelector('.home');
+    homeSection.scrollIntoView({ behavior: 'smooth' });
+}
 
 
