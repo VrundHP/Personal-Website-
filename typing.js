@@ -55,3 +55,9 @@ window.addEventListener("scroll", () => {
     }
 });
 
+
+function scrollToHome() {
+    const homeSection = document.querySelector('.home');
+    homeSection.scrollIntoView({ behavior: 'smooth' });
+}
+
