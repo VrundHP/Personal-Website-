@@ -51,25 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const particlesContainer = document.querySelector(".particles");
-    const numberOfParticles = 20; // Adjust the number of particles
-
-    for (let i = 0; i < numberOfParticles; i++) {
-        const particle = document.createElement("div");
-
-        // Random initial positions
-        const randomX = Math.random() * window.innerWidth; // Width of the screen
-        const randomY = Math.random() * window.innerHeight; // Height of the screen
-
-        // Set particle positions
-        particle.style.left = `${randomX}px`;
-        particle.style.top = `${randomY}px`;
-
-        particlesContainer.appendChild(particle);
-    }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.getElementById("navbar");
     const homePage = document.querySelector(".home-page");
 
@@ -257,43 +238,6 @@ $(document).ready(function() {
 
 });
 
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    const homePage = document.querySelector(".home-page");
-    const particlesContainer = document.querySelector(".particles");
-
-    // Log to verify elements
-    console.log("Home Page:", homePage);
-    console.log("Particles Container:", particlesContainer);
-
-    // Function to create a particle at the cursor position
-    function createParticle(x, y) {
-        const particle = document.createElement("div");
-        particle.className = "cursor-particle";
-        particle.style.left = `${x}px`;
-        particle.style.top = `${y}px`;
-
-        // Append the particle to the particles container
-        particlesContainer.appendChild(particle);
-
-        // Log particle creation
-        console.log("Particle created at:", x, y);
-
-        // Remove the particle after the animation ends
-        particle.addEventListener("animationend", () => {
-            particle.remove();
-        });
-    }
-
-    // Event listener for mouse movement
-    homePage.addEventListener("mousemove", (e) => {
-        const rect = homePage.getBoundingClientRect();
-        const x = e.clientX - rect.left; // Cursor X relative to home-page
-        const y = e.clientY - rect.top;  // Cursor Y relative to home-page
-        createParticle(x, y);
-    });
-});
 
 
 homePage.addEventListener("mousemove", (e) => {
