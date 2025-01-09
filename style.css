@@ -84,7 +84,7 @@ header{
 
 .logo{
     font-size: 3rem;
-    color: #d15353;
+    color: #ffffff;
     font-weight: 800;
     cursor: pointer;
     transition: 0.5s ease;
@@ -96,7 +96,7 @@ header{
 
 nav a{
     font-size: 1.8rem;
-    color: rgb(182, 74, 74);
+    color: rgb(255, 255, 255);
     margin-left: 4rem;
     font-weight: 500;
     transition: 0.3s ease;
@@ -105,8 +105,8 @@ nav a{
 
 nav a:hover,
 nav a.active{
-    color: #b74b4b;
-    border-bottom: 3px solid #b74b4b;
+    color: #ffffff;
+    border-bottom: 3px solid #ffffff;
 }
 
 @media(max-width:995px){
@@ -116,8 +116,8 @@ nav a.active{
         top: 0;
         right: 0;
         width: 40%;
-        border-left: 3px solid #b74b4b;
-        border-bottom: 3px solid #b74b4b;
+        border-left: 3px solid #ffffff;
+        border-bottom: 3px solid #ffffff;
         border-bottom-left-radius: 2rem;
         padding: 1rem solid;
         background-color: #161616;
@@ -138,7 +138,7 @@ nav a.active{
     nav a.active{
         padding: 1rem;
         border-radius: 0.5rem;
-        border-bottom: 0.5rem solid #b74b4b;
+        border-bottom: 0.5rem solid #ffffff;
     }
 }
 
