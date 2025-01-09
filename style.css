@@ -19,8 +19,6 @@
 
 
 
-
-
 .home-page {
     display: flex;
     flex-direction: column; /* Stack items vertically */
@@ -44,6 +42,8 @@
     line-height: 1.3;
     color: #fff;
 }
+
+
 
 
 
@@ -103,10 +103,14 @@ nav a{
     border-bottom: 3px solid transparent;
 }
 
-nav a:hover,
-nav a.active{
+nav a:hover {
     color: #ffffff;
-    border-bottom: 3px solid #ffffff;
+    border-bottom: 3px solid #ffffff; /* Line on hover */
+}
+
+nav a.active {
+    color: #ffffff;
+    border-bottom: 3px solid #ffffff; /* Line when active */
 }
 
 @media(max-width:995px){
@@ -128,11 +132,15 @@ nav a.active{
         display: block;
     }
 
-    nav a{
-        display: block;
-        font-size: 2rem;
-        margin: 3rem 0;
-    }
+    nav a {
+        font-size: 1.8rem;
+        color: rgb(255, 255, 255);
+        margin-left: 4rem;
+        font-weight: 500;
+        transition: 0.3s ease;
+        border-bottom: 3px solid transparent; /* No line by default */
+    }    
+
 
 }
 
