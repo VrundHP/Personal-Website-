@@ -251,3 +251,38 @@ function scrollToHome() {
 }
 
 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll("nav a");
+    const sections = document.querySelectorAll("section");
+
+    // Function to add 'active' class to the current link
+    function setActiveLink() {
+        let currentSection = "";
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+
+            // Check if the scroll position is within this section
+            if (pageYOffset >= sectionTop - 50 && pageYOffset < sectionTop + sectionHeight) {
+                currentSection = section.getAttribute("id"); // Get the section ID
+            }
+        });
+
+        // Update active class on links
+        navLinks.forEach(link => {
+            link.classList.remove("active"); // Remove 'active' from all links
+            if (link.getAttribute("href").substring(1) === currentSection) {
+                link.classList.add("active"); // Add 'active' to the current link
+            }
+        });
+    }
+
+    // Listen for scroll events
+    window.addEventListener("scroll", setActiveLink);
+
+    // Initialize active link on page load
+    setActiveLink();
+});
+
